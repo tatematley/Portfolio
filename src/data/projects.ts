@@ -76,7 +76,10 @@ export const projects: Project[] = [
       afterImage: '/images/careerLaunch/after.png'
     },
 
-    heroVideo: { type: 'file', src: '/careerLaunchNew.mov' },
+    heroVideo: {
+      type: 'youtube',
+      src: 'https://www.youtube.com/embed/ZdTraEA0jE4?rel=0&modestbranding=1'
+    },
 
     overview:
       "Career Launch is a student-facing website experience designed to help students quickly understand career pathways, deadlines, and next steps. My focus was building a clear student story—what a student is trying to do, what they need at each step, and how we can make that process feel simple instead of overwhelming.",
@@ -158,30 +161,43 @@ export const projects: Project[] = [
     heroVideo: { type: 'file', src: '/INTEX2.mov' },
 
     demoVideos: [
-    {
-      title: 'Feature Demo: Session Cookies',
-      description:
-        'Demonstrates the use of session cookies to maintain user state and preferences.',
-      video: { type: 'file', src: '/cineNiche-cookies-demo.mov' }
-    },
-    {
-      title: 'Feature Demo: Machine Learning Recommendations',
-      description:
-        'Shows personalized movie recommendations generated using machine learning models.',
-      video: { type: 'file', src: '/images/cineNiche/ml-demo.mp4' }
-    },
-    {
-      title: 'Feature Demo: Security & Authentication',
-      description: 'Highlights role-based authentication and security controls within the application.',
-      video: { type: 'youtube', src: 'https://www.youtube.com/embed/bLYaUMldHTY' }
-    },
-    {
-      title: 'Feature Demo: CRUD & User Functionality',
-      description:
-        'Demonstrates full CRUD functionality and user interactions across the platform.',
-      video: { type: 'file', src: '/images/cineNiche/crud-demo.mp4' }
-    }
-  ],
+      {
+        title: 'Feature Demo: Walkthrough',
+        description:
+          'High-level walkthrough of the CineNiche platform and its core functionality.',
+        video: {
+          type: 'youtube',
+          src: 'https://www.youtube.com/embed/LkYsrLN4tV4?rel=0&modestbranding=1'
+        }
+      },
+      {
+        title: 'Feature Demo: Session Cookies',
+        description:
+          'Demonstrates the use of session cookies to maintain user state and preferences.',
+        video: {
+          type: 'youtube',
+          src: 'https://www.youtube.com/embed/lG9MbH8SYfg?rel=0&modestbranding=1'
+        }
+      },
+      {
+        title: 'Feature Demo: Machine Learning Recommendations',
+        description:
+          'Shows personalized movie recommendations generated using machine learning models.',
+        video: {
+          type: 'youtube',
+          src: 'https://www.youtube.com/embed/c-bcXAVqS_Q?rel=0&modestbranding=1'
+        }
+      },
+      {
+        title: 'Feature Demo: CRUD & User Functionality',
+        description:
+          'Demonstrates full CRUD functionality and user interactions across the platform.',
+        video: {
+          type: 'youtube',
+          src: 'https://www.youtube.com/embed/-fVirIAGjnI?rel=0&modestbranding=1'
+        }
+      }
+    ],
 
     gallery: [
         {
@@ -430,8 +446,8 @@ export const projects: Project[] = [
   coverImage: '/images/alswindows/cover.png',
 
   heroVideo: {
-    type: 'file',
-    src: '/AlsWindows.mov'
+  type: 'youtube',
+  src: 'https://www.youtube.com/embed/NrM8dYlnrCg'
   },
 
   overview:
