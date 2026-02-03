@@ -278,30 +278,46 @@ export const projects: Project[] = [
     tags: ['UX', 'Web Design', 'Full Stack', 'Case Study'],
     coverImage: '/images/turtle/cover.png',
 
-    heroVideo: { type: 'file', src: '/images/turtle/Turtle-Shelter-Project.mp4' },
+    heroVideo: {
+      type: 'youtube',
+      src: 'https://www.youtube.com/embed/HjrtyC0hmoE?rel=0&modestbranding=1'
+    },
 
     demoVideos: [
       {
-        title: 'Feature Demo: AWS Database & Deployment',
-        description: 'Shows how the app connects to the database and is deployed on AWS.',
-        video: { type: 'file', src: '/images/turtle/demo-aws.mp4' }
+        title: "Feature Demo: AWS Database & Deployment",
+        description: "Shows how the app connects to the database and is deployed on AWS.",
+        video: {
+          type: "youtube",
+          src: "https://www.youtube.com/embed/97YlE2ioDGE?rel=0&modestbranding=1",
+        },
       },
       {
-        title: 'Feature Demo: Data Normalization & ERD',
-        description: 'Walkthrough of the normalized schema and ERD that guided our database structure.',
-        video: { type: 'file', src: '/images/turtle/demo-erd.mp4' }
+        title: "Feature Demo: Data Normalization & ERD",
+        description: "Walkthrough of the normalized schema and ERD that guided our database structure.",
+        video: {
+          type: "youtube",
+          src: "https://www.youtube.com/embed/e7aLZNtfnU8?rel=0&modestbranding=1",
+        },
       },
       {
-        title: 'Feature Demo: UI + CRUD Functionality',
-        description: 'Demonstrates the user experience and full CRUD workflows built into the site.',
-        video: { type: 'file', src: '/images/turtle/demo-crud.mp4' }
+        title: "Feature Demo: UI + CRUD Functionality",
+        description: "Demonstrates the user experience and full CRUD workflows built into the site.",
+        video: {
+          type: "youtube",
+          src: "https://www.youtube.com/embed/l1UZOwGQl3U?rel=0&modestbranding=1",
+        },
       },
       {
-        title: 'Feature Demo: Data Analysis → Tableau Dashboards',
-        description: 'Shows how we analyzed data in Colab and turned it into Tableau dashboards.',
-        video: { type: 'file', src: '/images/turtle/demo-tableau.mp4' }
-      }
+        title: "Feature Demo: Data Analysis → Tableau Dashboards",
+        description: "Shows how we analyzed data in Colab and turned it into Tableau dashboards.",
+        video: {
+          type: "youtube",
+          src: "https://www.youtube.com/embed/UVBww8KTQDg?rel=0&modestbranding=1",
+        },
+      },
     ],
+
 
     gallery: [
       {
