@@ -434,7 +434,7 @@ export const projects: Project[] = [
       },
       {
         label: 'Sprint Retrospective',
-        href: 'https://drive.google.com/file/d/1VwtFFEdJlwtFWBrysSHV08L3K2AllECN/view?usp=sharing'
+        href: 'https://drive.google.com/uc?export=download&id=1VwtFFEdJlwtFWBrysSHV08L3K2AllECN'
       },
 
     ],
