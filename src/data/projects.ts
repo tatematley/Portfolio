@@ -434,8 +434,9 @@ export const projects: Project[] = [
       },
       {
         label: 'Sprint Retrospective',
-        href: '/images/templescheduler/sprint.pdf'
+        href: 'https://drive.google.com/file/d/1VwtFFEdJlwtFWBrysSHV08L3K2AllECN/view?usp=sharing'
       },
+
     ],
 
     links: []
