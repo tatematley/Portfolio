@@ -52,6 +52,78 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: 'candid',
+    title: 'Candid',
+    subtitle:
+      'An AI-powered talent optimization platform that combines machine learning, LLM explanations, and full-stack workflows to make hiring and growth decisions more transparent.',
+
+    role: 'Full-Stack Developer + UX/UI (React, Node, PostgreSQL)',
+    timeline: 'AIS SCLC 2026 Competition (Sponsored by EY)',
+
+    tools: [
+      'React',
+      'Node.js',
+      'PostgreSQL',
+      'Authentication + Role-Based Access Control',
+      'CRUD Workflows (Jobs, Employees, Applicants, Users)',
+      'Resume Parsing (PDF → skill extraction)',
+      'Weighted Skill Matching Algorithm',
+      'Machine Learning (Logistic Regression Model)',
+      'LLM Integration (Claude AI)',
+      'Explainable AI (Human-Readable Recommendations)',
+      'Privacy Policy + Governance-Aware Design',
+      'Tableau Embed (Analytics Dashboard)',
+      'UX/UI Design'
+    ],
+
+    tags: ['UX', 'Full Stack', 'AI', 'Machine Learning', 'Case Study'],
+
+    coverImage: '/images/candid/cover.png',
+
+    heroVideo: {
+      type: 'youtube',
+      src: 'https://www.youtube.com/embed/Gy-vn-v2pao?rel=0&modestbranding=1'
+    },
+
+    overview:
+      "Candid is an AI-driven talent management platform built for the AIS SCLC competition sponsored by EY. It helps enterprises map employee skills to open roles, rank candidates using a hybrid ML scoring system, and generate personalized upskilling plans with clear, human-readable explanations. The platform balances intelligent automation with transparency and governance-minded design.",
+
+    challenge:
+      "Traditional HR systems are either manual and slow or automated without transparency. The challenge was building a system that goes beyond keyword matching, learns from historical hiring data, and still explains its decisions clearly. At the same time, we had to consider bias, privacy, and responsible handling of sensitive workforce data.",
+
+    process: [
+      'Designed and built the full React front-end with a clean, role-based experience (manager vs viewer)',
+      'Implemented authentication, secure login, user creation, and role-based access control',
+      'Built full CRUD workflows for jobs, employees, applicants, and platform management',
+      'Designed and implemented the PostgreSQL database schema to support skill mapping and role requirements',
+      'Developed a hybrid matching system combining weighted skill comparisons (70%) and a logistic regression model trained on historical hiring data (30%)',
+      'Integrated resume PDF parsing to automatically extract candidate skills and reduce manual entry',
+      'Embedded Tableau analytics for high-level hiring and workforce insights',
+      'Integrated Claude AI to generate explainable recommendation summaries and structured upskilling plans',
+      'Implemented privacy policy visibility and governance-aware UX to reinforce transparency'
+    ],
+
+    results: [
+      'Delivered a working full-stack prototype using React, Node, and PostgreSQL',
+      'Created ranked candidate recommendations based on hybrid ML + weighted scoring logic',
+      'Built transparent skill breakdowns so managers can see exactly where candidates meet or miss requirements',
+      'Generated personalized, sequenced upskilling plans with timeline estimates and downloadable PDFs',
+      'Implemented secure role-based access so managers and viewers see appropriate functionality'
+    ],
+
+    reflection:
+      "Candid reinforced that strong AI products depend on trust. The most important part wasn’t just building a matching algorithm, it was designing clarity around it. From weighted scoring to AI-generated explanations, every decision needed to be understandable. Owning the React app, database, authentication system, and UX allowed me to ensure the product felt simple, secure, and genuinely useful.",
+
+    documents: [
+      { label: 'Presentation Slides', href: '/images/candid/CandidSlides.pdf' }
+    ],
+
+    links: [
+      { label: 'GitHub', href: 'https://github.com/tatematley/AISComp' },
+      { label: 'YouTube Walkthrough', href: 'https://youtu.be/Gy-vn-v2pao' }
+    ]
+  },
+  {
     slug: 'career-launch',
     title: 'Career Launch',
     subtitle:

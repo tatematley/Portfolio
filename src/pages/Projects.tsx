@@ -8,7 +8,8 @@ export default function Projects() {
         <p className="projects-eyebrow">Selected Work</p>
         <h1>Projects</h1>
         <p className="projects-subtitle">
-          A few projects I’ve worked on — focused on people-first design and clear experiences.
+          A few projects I’ve worked on. <br>
+          </br>Focused on people-first design and clear experiences.
         </p>
 
         <div className="project-grid">

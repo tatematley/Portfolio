@@ -14,6 +14,7 @@ export default function Contact() {
           </a>
           <a
             className="resume-btn resume-btn-secondary"
+            style={{ color: "black" }}
             href="https://www.linkedin.com/in/tatematley/"
             target="_blank"
             rel="noreferrer"
@@ -23,9 +24,6 @@ export default function Contact() {
         </div>
 
         <div className="contact-lines">
-          <a className="contact-line" href="mailto:tatematley@gmail.com">
-            tatematley@gmail.com
-          </a>
           <a className="contact-line" href="tel:+18012004361">
             (801) 200-4361
           </a>

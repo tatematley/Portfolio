@@ -224,15 +224,30 @@ h3 {
 .about-inner {
   max-width: 820px;
   margin: 0 auto;
-  text-align: center;
 }
 
+/* little "About" label */
 .about-eyebrow {
   font-size: 12px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--muted);
   margin: 0 0 18px;
+  text-align: center;
+}
+
+/* top row: text left, photo right */
+.about-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  margin-bottom: 2.5rem;
+  text-align: left;
+}
+
+.about-text {
+  flex: 1;
 }
 
 .about h1 {
@@ -244,10 +259,26 @@ h3 {
   color: var(--muted);
   font-size: 18px;
   line-height: 1.8;
-  margin: 0 auto 44px;
+  margin: 0;
   max-width: 680px;
 }
 
+/* photo */
+.about-photoWrap {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+.about-photo {
+  width: 300px;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  background: white;
+}
+
+/* body paragraphs */
 .about-body {
   text-align: center;
   margin: 0 auto;
@@ -261,6 +292,7 @@ h3 {
   color: var(--text);
 }
 
+/* buttons */
 .about-cta {
   display: flex;
   justify-content: center;
@@ -269,19 +301,21 @@ h3 {
   flex-wrap: wrap;
 }
 
-.about-photoWrap {
-  display: flex;
-  justify-content: center;
-  margin: 18px 0 34px;
-}
+/* Responsive */
+@media (max-width: 900px) {
+  .about-top {
+    flex-direction: column-reverse; /* photo above text on mobile */
+    text-align: center;
+    gap: 1.75rem;
+  }
 
-.about-photo {
-  width: 220px;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 999px; /* clean circle */
-  border: 1px solid var(--border);
-  background: white;
+  .about-lede {
+    margin: 0 auto;
+  }
+
+  .about-photo {
+    width: 220px;
+  }
 }
 
 /* Projects Page Styling */

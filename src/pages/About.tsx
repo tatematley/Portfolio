@@ -4,20 +4,24 @@ export default function About() {
       <div className="about-inner">
         <p className="about-eyebrow">About</p>
 
-        <div className="about-photoWrap">
-          <img
-            className="about-photo"
-            src="/images/headshot3.png"
-            alt="Photo of Tate Matley"
-          />
+        <div className="about-top">
+          <div className="about-text">
+            <h1>Hi, I’m Tate.</h1>
+
+            <p className="about-lede">
+              I’m passionate about building web experiences that feel clear, thoughtful, 
+              and genuinely useful to the people using them.
+            </p>
+          </div>
+
+          <div className="about-photoWrap">
+            <img
+              className="about-photo"
+              src="/images/headshot3.png"
+              alt="Photo of Tate Matley"
+            />
+          </div>
         </div>
-
-        <h1>Hi, I’m Tate.</h1>
-
-        <p className="about-lede">
-          I’m passionate about building web experiences that feel clear, human,
-          and genuinely helpful.
-        </p>
 
         <div className="about-body">
           <p>
@@ -30,15 +34,16 @@ export default function About() {
           <p>
             Outside of school and projects, I love trying new experiences. I’m 
             happiest when I’m traveling, meeting new people, and learning about 
-            different cultures. I also love being outdoors — especially skiing — 
-            and I’m known to bake for just about any excuse, especially when it 
-            means sharing something with others.
+            different cultures. I also love being outdoors, especially skiing, along 
+            with reading and watching movies. And I’m known to bake for just about 
+            any excuse, especially when it means sharing something with the people 
+            around me.
           </p>
 
           <p>
             At the core of everything I do is a desire to serve people well.
             Whether I’m building a site, designing a flow, or collaborating with
-            a team, I want the end result to feel intentional — and to make
+            a team, I want the end result to feel intentional and to make
             someone’s day a little easier.
           </p>
         </div>
