@@ -52,6 +52,63 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: 'letters-to-jesus',
+    title: 'Letters to Jesus',
+    subtitle:
+      'A React platform built to gather and display heartfelt letters to Jesus — bringing a community Easter tradition to life online.',
+    status: 'live',
+    role: 'Full-Stack Developer / Designer',
+    timeline: 'March 2026',
+    tools: [
+      'React',
+      'JavaScript',
+      'EmailJS (automated letter delivery)',
+      'UX/UI Design',
+      'Responsive Web Design'
+    ],
+    tags: ['Full Stack', 'React', 'Web Design'],
+
+    coverImage: '/images/lettersToJesus/cover.png',
+
+    overview:
+      "Letters to Jesus is a community Easter project inspired by Elder Gary E. Stevenson's invitation to build more Christ-centered Easter traditions. The idea is simple: people write letters to Jesus — prayers, poems, songs, drawings, or anything on their heart — and those letters are displayed in art galleries for others to read and reflect on. The website brings that experience online, making it easy for anyone to submit a letter and read what others have written. What makes it powerful is the range of voices: people from different backgrounds being genuinely honest about their lives, their questions, their fears, and their faith — and how they still turn to Jesus.",
+
+    challenge:
+      "The site needed to feel warm, personal, and accessible — matching the spirit of the project itself. It also needed a reliable submission system so that every letter sent through the site would actually reach us without manual follow-up.",
+
+    process: [
+      'Designed a clean, welcoming interface that reflects the spirit of the project',
+      'Built the front-end with React and JavaScript',
+      'Integrated EmailJS so every submitted letter is automatically delivered to our email — no backend server required',
+      'Deployed and launched the live site in time for Easter 2026'
+    ],
+
+    results: [
+      'Launched a live platform for the Letters to Jesus community project',
+      'Automated letter submission and delivery via EmailJS',
+      'Built and deployed end-to-end independently'
+    ],
+
+    reflection:
+      "This is one of my favorite things I've built — not because of the tech, but because of what it's for. Getting to combine something I care deeply about with the skills I've been building has been really meaningful. It's a good reminder that the best projects are the ones that actually matter to people.",
+
+    gallery: [
+      { src: '/images/lettersToJesus/home1.png', alt: 'Letters to Jesus homepage' },
+      { src: '/images/lettersToJesus/home2.png', alt: 'Letters to Jesus site' },
+      { src: '/images/lettersToJesus/home3.png', alt: 'Letters to Jesus site' },
+      { src: '/images/lettersToJesus/writeALetter.png', alt: 'Write a Letter page' },
+      { src: '/images/lettersToJesus/event1.jpeg', alt: 'Letters to Jesus event' },
+      { src: '/images/lettersToJesus/event2.JPG', alt: 'Letters to Jesus event' },
+      { src: '/images/lettersToJesus/event3.jpeg', alt: 'Letters to Jesus event' },
+    ],
+
+    links: [
+      { label: 'Live Site', href: 'https://www.letters-to-jesus.com/' },
+      { label: 'GitHub', href: 'https://github.com/tatematley/LettersToJesus' }
+    ]
+  },
+
+  {
     slug: 'candid',
     title: 'Candid',
     subtitle:
