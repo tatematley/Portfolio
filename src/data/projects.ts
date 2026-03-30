@@ -95,11 +95,8 @@ export const projects: Project[] = [
     gallery: [
       { src: '/images/lettersToJesus/home1.png', alt: 'Letters to Jesus homepage' },
       { src: '/images/lettersToJesus/home2.png', alt: 'Letters to Jesus site' },
-      { src: '/images/lettersToJesus/home3.png', alt: 'Letters to Jesus site' },
-      { src: '/images/lettersToJesus/writeALetter.png', alt: 'Write a Letter page' },
       { src: '/images/lettersToJesus/event1.jpeg', alt: 'Letters to Jesus event' },
       { src: '/images/lettersToJesus/event2.JPG', alt: 'Letters to Jesus event' },
-      { src: '/images/lettersToJesus/event3.jpeg', alt: 'Letters to Jesus event' },
     ],
 
     links: [
