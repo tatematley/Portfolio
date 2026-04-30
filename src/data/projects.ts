@@ -42,7 +42,7 @@ export type Project = {
   };
 
   // image gallery
-  gallery?: { src: string; alt: string }[];
+  gallery?: { src: string; alt: string; size?: 'third' }[];
 
   // links (github, slides, live site)
   links?: { label: string; href: string }[];
@@ -166,7 +166,7 @@ export const projects: Project[] = [
     ],
 
     reflection:
-      "Candid reinforced that strong AI products depend on trust. The most important part wasn’t just building a matching algorithm, it was designing clarity around it. From weighted scoring to AI-generated explanations, every decision needed to be understandable. Owning the React app, database, authentication system, and UX allowed me to ensure the product felt simple, secure, and genuinely useful.",
+      "Candid reinforced that strong AI products depend on trust. The most important part wasn't just building a matching algorithm, it was designing clarity around it. From weighted scoring to AI-generated explanations, every decision needed to be understandable. Owning the React app, database, authentication system, and UX allowed me to ensure the product felt simple, secure, and genuinely useful.",
 
     documents: [
       { label: 'Presentation Slides', href: '/images/candid/CandidSlides.pdf' }
@@ -228,7 +228,7 @@ export const projects: Project[] = [
     ],
 
     reflection:
-      "This project taught me how much great UX is communication. The work wasn’t just designing pages—it was aligning people around a simple story: what students need, why it matters, and how we can remove friction. I loved the mix of strategy, design, and real implementation—and it reinforced that the best work is always about the people using it.",
+      "This project taught me how much great UX is communication. The work wasn't just designing pages—it was aligning people around a simple story: what students need, why it matters, and how we can remove friction. I loved the mix of strategy, design, and real implementation—and it reinforced that the best work is always about the people using it.",
 
 
     documents: [
@@ -250,18 +250,58 @@ export const projects: Project[] = [
 
   {
     slug: 'blushing-blossoms',
-    title: 'Blushing Blossoms',
-    subtitle: 'An elegant floral website designed for weddings and events.',
-    status: 'in-progress',
-    tags: ['Web Design', 'Brand'],
-    coverImage: '/images/blushingBlossoms/cover.png', // optional if you want it on the projects grid too
+    title: 'Blushing Blossoms & Co.',
+    subtitle:
+      'A timeless, editorial floral website built for a real client — designed for elegance, ease of use, and a gallery that updates itself.',
+    status: 'live',
+    role: 'UI/UX Designer & Front-End Developer',
+    timeline: 'January–March 2026',
+    tools: [
+      'React',
+      'TypeScript',
+      'Google Drive API',
+      'UX/UI Design',
+      'Responsive Web Design'
+    ],
+    tags: ['Web Design', 'Brand', 'Real Client'],
+    coverImage: '/images/blushingBlossoms/cover.png',
+
     overview:
-      "Currently in development — I’m designing and building an editorial, timeless feel while keeping navigation clean and simple. Sharing a few early screens here while I finish the full build.",
+      "Blushing Blossoms & Co. is a wedding and event floral studio run by a friend. She needed a website that felt as elevated and intentional as her arrangements. I led the design and front-end development while her husband handled the rentals and admin backend. The result is a clean, editorial experience — warm cream and burgundy palette, refined typography, and a gallery that stays current without any technical effort from the owner.",
+
+    challenge:
+      "The site needed to feel timeless and professional while being genuinely easy to maintain. The biggest UX challenge was building a gallery that could scale — the client is constantly adding new photos and needed a way to keep the site updated without ever touching code.",
+
+    process: [
+      'Designed the full visual language: cream and burgundy palette, serif + script typography, editorial page layouts',
+      'Built the front-end in React and TypeScript with a focus on consistency and responsiveness across all pages',
+      'Integrated the Google Drive API so the gallery pulls photos automatically from Drive folders — the owner drops photos in a folder and they appear on the site',
+      'Structured and designed navigation across Home, Gallery, Rentals, Inquiry, and Pricing',
+      'Collaborated with the client\'s husband on connecting the admin and rentals backend',
+      'Designed mobile-first throughout with attention to how the layouts shift and scale'
+    ],
+
+    results: [
+      'Delivered a live, production-ready website for a real client',
+      'Built a self-updating gallery powered by the Google Drive API — zero technical effort needed from the owner',
+      'Created a consistent design system across all pages',
+      'Launched at blushingblossoms.co'
+    ],
+
+    reflection:
+      "This was one of the most satisfying projects I've worked on — there's something special about building for someone you know and watching it actually serve their business. The Google Drive gallery was a fun problem to solve: instead of building a CMS or teaching the client to manage uploads, we connected directly to where she already stores her photos. That's the kind of solution that just works.",
+
     gallery: [
       { src: '/images/blushingBlossoms/home1.png', alt: 'Blushing Blossoms home section' },
       { src: '/images/blushingBlossoms/gallery.png', alt: 'Blushing Blossoms photo gallery' },
+      { src: '/images/blushingBlossoms/BBmobile1.png', alt: 'Blushing Blossoms mobile view', size: 'third' },
+      { src: '/images/blushingBlossoms/BBmobile2.png', alt: 'Blushing Blossoms mobile view', size: 'third' },
+      { src: '/images/blushingBlossoms/BBmobile3.png', alt: 'Blushing Blossoms mobile view', size: 'third' },
     ],
-    links: []
+
+    links: [
+      { label: 'Live Site', href: 'https://blushingblossoms.co/' }
+    ]
   },
 
   {
@@ -354,7 +394,7 @@ export const projects: Project[] = [
 
 
     overview:
-      "INTEX is BYU’s four-day Integrated Experience where teams build full-stack solutions under serious time pressure. For CineNiche, our team built a movie recommendation app from scratch—designing a clean user experience with React, building APIs and backend logic in .NET, and creating personalized recommendation pipelines using Python.",
+      "INTEX is BYU's four-day Integrated Experience where teams build full-stack solutions under serious time pressure. For CineNiche, our team built a movie recommendation app from scratch—designing a clean user experience with React, building APIs and backend logic in .NET, and creating personalized recommendation pipelines using Python.",
 
     challenge:
       "We needed to ship a polished, secure, and usable product in four days—balancing UX decisions with real backend logic, authentication, and deployment constraints.",
@@ -376,7 +416,7 @@ export const projects: Project[] = [
     ],
 
     reflection:
-      "INTEX was an experience where everything came together. In just four days, we took months of learning and applied it to a real, working product. Building CineNiche pushed me to think end-to-end—designing a clean, intuitive user experience while also contributing to backend logic, security, and deployment. I’m especially grateful for my team and the opportunity to learn alongside them. This project strengthened my confidence in building people-first experiences while balancing real technical constraints.",
+      "INTEX was an experience where everything came together. In just four days, we took months of learning and applied it to a real, working product. Building CineNiche pushed me to think end-to-end—designing a clean, intuitive user experience while also contributing to backend logic, security, and deployment. I'm especially grateful for my team and the opportunity to learn alongside them. This project strengthened my confidence in building people-first experiences while balancing real technical constraints.",
 
     links: [
       { label: 'View Slides', href: '/INTEX2Slides.pdf' },
@@ -482,7 +522,7 @@ export const projects: Project[] = [
     ],
 
     reflection:
-      "This project reinforced how much I love building for real people. It wasn’t just about shipping features — it was about making something clear, usable, and respectful, while still delivering real full-stack functionality under pressure.",
+      "This project reinforced how much I love building for real people. It wasn't just about shipping features — it was about making something clear, usable, and respectful, while still delivering real full-stack functionality under pressure.",
 
     links: [
       { label: 'View Slides', href: '/images/turtle/Turtle-Shelter-Slides.pdf' },
@@ -570,7 +610,7 @@ export const projects: Project[] = [
 
   {
   slug: 'als-windows',
-  title: "Al’s Windows",
+  title: "Al's Windows",
   subtitle:
     'Full-stack website for a local window cleaning business, built and deployed end-to-end.',
 
@@ -594,7 +634,7 @@ export const projects: Project[] = [
   },
 
   overview:
-    "Al’s Windows is a full-stack website built for a local window cleaning business to support real customers and real operations. I designed and developed the entire system end-to-end, focusing on a clean customer experience while building a secure backend to manage quotes, customers, and scheduling.",
+    "Al's Windows is a full-stack website built for a local window cleaning business to support real customers and real operations. I designed and developed the entire system end-to-end, focusing on a clean customer experience while building a secure backend to manage quotes, customers, and scheduling.",
 
   challenge:
     "The challenge was to create a professional, trustworthy site that could handle real customer data while remaining simple and approachable. The solution needed to support online scheduling, administrative workflows, and secure deployment.",

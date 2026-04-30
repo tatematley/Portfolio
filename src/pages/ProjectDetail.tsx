@@ -160,7 +160,7 @@ export default function ProjectDetail() {
 
                         <div className="case-gallery">
                         {project.gallery.map((img) => (
-                            <figure key={img.src} className="case-galleryItem">
+                            <figure key={img.src} className={`case-galleryItem${img.size === 'third' ? ' case-galleryItem--third' : ''}`}>
                             <img className="case-galleryImg" src={img.src} alt={img.alt} />
                             </figure>
                         ))}

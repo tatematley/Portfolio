@@ -593,14 +593,6 @@ h3 {
   margin-top: 44px;
 }
 
-.case-gallery {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
-  max-width: 980px;
-  margin: 18px auto 54px;
-}
-
 .case-galleryCard {
   border: 1px solid var(--border);
   border-radius: 18px;
@@ -610,7 +602,7 @@ h3 {
 
 .case-gallery {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 18px;
   max-width: 980px;
   margin: 18px auto 54px;
@@ -618,15 +610,20 @@ h3 {
 }
 
 .case-galleryItem {
+  grid-column: span 3;
   border: 1px solid var(--border);
   overflow: hidden;
   background: rgba(255, 255, 255, 0.35);
 }
 
+.case-galleryItem--third {
+  grid-column: span 2;
+}
+
 .case-galleryImg {
   width: 100%;
-  height: auto;         
-  object-fit: contain;  
+  height: auto;
+  object-fit: contain;
   display: block;
 }
 
@@ -687,6 +684,11 @@ h3 {
 @media (max-width: 820px) {
   .case-gallery {
     grid-template-columns: 1fr;
+  }
+
+  .case-galleryItem,
+  .case-galleryItem--third {
+    grid-column: span 1;
   }
 
   .case-galleryImg {
