@@ -31,16 +31,7 @@ export default function Projects() {
                 </div>
 
 
-              <div className="project-card-bottom">
-                <div className="project-tags">
-                  {(p.tags ?? []).slice(0, 3).map((t) => (
-                    <span className="project-tag" key={t}>
-                      {t}
-                    </span>
-                  ))}
-                </div>
-                <span className="project-arrow">View →</span>
-              </div>
+              <span className="project-arrow">View →</span>
             </Link>
           ))}
         </div>

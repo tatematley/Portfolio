@@ -1,5 +1,5 @@
 export default function Resume() {
-  const pdfPath = '/Tate-Matley-Resume.pdf';
+  const pdfPath = '/TateMatleyResume.pdf';
   const imgPath = '/images/resume.png'; 
 
   return (

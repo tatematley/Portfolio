@@ -1,9 +1,14 @@
+import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { projects } from '../data/projects';
+import Lightbox from '../components/Lightbox';
 
 export default function ProjectDetail() {
   const { slug } = useParams();
   const project = projects.find((p) => p.slug === slug);
+  const [lightbox, setLightbox] = useState<{ slug?: string; index: number } | null>(null);
+  // only show the popup for the project it was opened on
+  const lightboxIndex = lightbox && lightbox.slug === slug ? lightbox.index : null;
 
   if (!project) {
     return (
@@ -29,8 +34,15 @@ export default function ProjectDetail() {
           <div className="case-status">
             <span className="case-statusBadge">In Progress</span>
             <p className="case-statusText">
-              This project is currently in development. Here are a few early screens — live link coming soon.
+              This project is currently in development. Here are a few early screens, and a live link is coming soon.
             </p>
+          </div>
+        )}
+
+        {project.notice && (
+          <div className="case-status">
+            <span className="case-statusBadge">{project.notice.label}</span>
+            <p className="case-statusText">{project.notice.text}</p>
           </div>
         )}
 
@@ -111,7 +123,11 @@ export default function ProjectDetail() {
                     {d.description && <p className="case-demoDesc">{d.description}</p>}
 
                     <div className="case-media">
-                        {d.video.type === 'file' ? (
+                        {!d.video ? (
+                        <div className="case-embedWrap case-videoPlaceholder">
+                            <span>Video coming soon</span>
+                        </div>
+                        ) : d.video.type === 'file' ? (
                         <video className="case-video" controls playsInline>
                             <source src={d.video.src} />
                         </video>
@@ -159,12 +175,29 @@ export default function ProjectDetail() {
                         <h2>Gallery</h2>
 
                         <div className="case-gallery">
-                        {project.gallery.map((img) => (
+                        {project.gallery.map((img, i) => (
                             <figure key={img.src} className={`case-galleryItem${img.size === 'third' ? ' case-galleryItem--third' : ''}`}>
-                            <img className="case-galleryImg" src={img.src} alt={img.alt} />
+                            <button
+                                type="button"
+                                className="case-galleryButton"
+                                onClick={() => setLightbox({ slug, index: i })}
+                                aria-label={`View larger: ${img.alt}`}
+                            >
+                                <img className="case-galleryImg" src={img.src} alt={img.alt} />
+                            </button>
+                            {img.caption && <figcaption className="case-galleryCaption">{img.caption}</figcaption>}
                             </figure>
                         ))}
                         </div>
+
+                        {lightboxIndex !== null && (
+                            <Lightbox
+                                images={project.gallery}
+                                index={lightboxIndex}
+                                onClose={() => setLightbox(null)}
+                                onChange={(index) => setLightbox({ slug, index })}
+                            />
+                        )}
                     </div>
                     )}
 

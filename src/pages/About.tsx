@@ -25,7 +25,7 @@ export default function About() {
 
         <div className="about-body">
           <p>
-            I care a lot about people — how they think, what they need, and what
+            I care a lot about people: how they think, what they need, and what
             gets in the way when they’re trying to get something done. That’s
             why I’m drawn to web design and UX: it’s the perfect intersection of
             creativity and problem-solving, with real impact on real humans.
@@ -49,7 +49,7 @@ export default function About() {
         </div>
 
         <div className="about-cta">
-          <a className="resume-btn" href="/Tate-Matley-Resume.pdf" download>
+          <a className="resume-btn" href="/TateMatleyResume.pdf" download>
             Download Resume
           </a>
           <a className="resume-btn resume-btn-secondary" href="/contact">
