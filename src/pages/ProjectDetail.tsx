@@ -3,6 +3,10 @@ import { useParams, Link } from 'react-router-dom';
 import { projects } from '../data/projects';
 import Lightbox from '../components/Lightbox';
 
+function Paragraphs({ text }: { text: string }) {
+  return text.split('\n\n').map((para) => <p key={para}>{para}</p>);
+}
+
 export default function ProjectDetail() {
   const { slug } = useParams();
   const project = projects.find((p) => p.slug === slug);
@@ -15,7 +19,7 @@ export default function ProjectDetail() {
       <section className="projects">
         <div className="projects-inner">
           <h1>Project not found</h1>
-          <Link className="resume-btn" to="/projects">
+          <Link className="resume-btn" to="/projects" state={{ restoreScroll: true }}>
             Back to Projects
           </Link>
         </div>
@@ -47,7 +51,7 @@ export default function ProjectDetail() {
         )}
 
         <div className="case-actions">
-          <Link className="resume-btn resume-btn-secondary" to="/projects">
+          <Link className="resume-btn resume-btn-secondary" to="/projects" state={{ restoreScroll: true }}>
             Back to Projects
           </Link>
 
@@ -208,20 +212,20 @@ export default function ProjectDetail() {
         {project.overview && (
           <div className="case-section">
             <h2>Overview</h2>
-            <p>{project.overview}</p>
+            <Paragraphs text={project.overview} />
           </div>
         )}
 
         {project.challenge && (
           <div className="case-section">
-            <h2>Challenge</h2>
-            <p>{project.challenge}</p>
+            <h2>The Challenge</h2>
+            <Paragraphs text={project.challenge} />
           </div>
         )}
 
         {project.process && project.process.length > 0 && (
           <div className="case-section">
-            <h2>Process</h2>
+            <h2>What I Built</h2>
             <ol className="case-list">
               {project.process.map((step) => (
                 <li key={step}>{step}</li>
@@ -230,9 +234,14 @@ export default function ProjectDetail() {
           </div>
         )}
 
-        {project.results && project.results.length > 0 && (
+        {project.impact ? (
           <div className="case-section">
-            <h2>Results / Impact</h2>
+            <h2>Impact</h2>
+            <Paragraphs text={project.impact} />
+          </div>
+        ) : project.results && project.results.length > 0 && (
+          <div className="case-section">
+            <h2>Impact</h2>
             <ul className="case-list">
               {project.results.map((r) => (
                 <li key={r}>{r}</li>
@@ -243,13 +252,13 @@ export default function ProjectDetail() {
 
         {project.reflection && (
           <div className="case-section case-reflection">
-            <h2>Reflection</h2>
-            <p>{project.reflection}</p>
+            <h2>What I Learned</h2>
+            <Paragraphs text={project.reflection} />
           </div>
         )}
 
         <div className="case-actions case-actions-bottom">
-          <Link className="resume-btn resume-btn-secondary" to="/projects">
+          <Link className="resume-btn resume-btn-secondary" to="/projects" state={{ restoreScroll: true }}>
             Back to Projects
           </Link>
 

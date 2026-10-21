@@ -1,6 +1,16 @@
 import { Link } from 'react-router-dom';
 import { projects } from '../data/projects';
 
+export const PROJECTS_SCROLL_KEY = 'projectsScrollY';
+
+function rememberScroll() {
+  try {
+    sessionStorage.setItem(PROJECTS_SCROLL_KEY, String(window.scrollY));
+  } catch {
+    // storage blocked: back to projects will just start at the top
+  }
+}
+
 export default function Projects() {
   return (
     <section className="projects">
@@ -14,7 +24,7 @@ export default function Projects() {
 
         <div className="project-grid">
           {projects.map((p) => (
-            <Link to={`/projects/${p.slug}`} key={p.slug} className="project-card">
+            <Link to={`/projects/${p.slug}`} key={p.slug} className="project-card" onClick={rememberScroll}>
                 {p.coverImage && (
                     <div className="project-card-imageWrap">
                     <img

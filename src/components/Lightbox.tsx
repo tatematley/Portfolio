@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 type Image = { src: string; alt: string; caption?: string };
 
@@ -14,6 +14,20 @@ export default function Lightbox({ images, index, onClose, onChange }: Props) {
   const hasMany = images.length > 1;
   const prev = () => onChange((index - 1 + images.length) % images.length);
   const next = () => onChange((index + 1) % images.length);
+
+  // swipe left/right on touch screens
+  const touchStartX = useRef<number | null>(null);
+  const onTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+  const onTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null || !hasMany) return;
+    const dx = e.changedTouches[0].clientX - touchStartX.current;
+    touchStartX.current = null;
+    if (Math.abs(dx) < 40) return;
+    if (dx > 0) prev();
+    else next();
+  };
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -34,7 +48,15 @@ export default function Lightbox({ images, index, onClose, onChange }: Props) {
   });
 
   return (
-    <div className="lightbox" role="dialog" aria-modal="true" aria-label={img.alt} onClick={onClose}>
+    <div
+      className="lightbox"
+      role="dialog"
+      aria-modal="true"
+      aria-label={img.alt}
+      onClick={onClose}
+      onTouchStart={onTouchStart}
+      onTouchEnd={onTouchEnd}
+    >
       <button className="lightbox-close" onClick={onClose} aria-label="Close">
         ×
       </button>

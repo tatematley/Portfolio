@@ -16,11 +16,13 @@ export type Project = {
   // card / hero visuals
   coverImage?: string;
 
-  // case study sections
+  // case study sections (blank lines in a string split it into paragraphs)
   overview?: string;
   challenge?: string;
   process?: string[];
   results?: string[];
+  // paragraph version of results; shown instead of the bullet list when set
+  impact?: string;
   reflection?: string;
 
   // main media
@@ -59,7 +61,7 @@ export const projects: Project[] = [
     slug: 'character-of-christ',
     title: 'Character of Christ',
     subtitle:
-      'A full-stack web app and companion mobile app that turn research on Christlike character into interactive assessments, study tools, and AI-powered growth plans.',
+      "A web app and mobile app for a BYU research project that helps people study the character of Jesus Christ and take small, real steps to become more like Him.",
     status: 'live',
     role: 'Web Developer / Research Assistant (BYU)',
     timeline: 'April 2026 – Present',
@@ -79,29 +81,25 @@ export const projects: Project[] = [
     coverImage: '/images/characterOfChrist/cover.jpg',
 
     overview:
-      "Character of Christ is a BYU research project that helps people study the character of Jesus Christ in scripture and General Conference talks, then take practical steps to become more like Him. The web app pairs a library of virtues, annotated scriptures, and prophetic teachings with a three-part assessment and AI-generated results that point each person toward the virtues they're ready to grow in. I then brought the experience to mobile as CLIMB, a React Native / Expo app built from the web app's design, content, and data.",
+      "I work as a web developer and research assistant on BYU’s Character of Christ project, where we’re turning years of research on Christlike character into an experience people can actually use. The platform helps users explore 25 Christlike virtues, take a personalized assessment, and find meaningful ways to study and grow.\n\nI built much of the web experience in React and TypeScript, and I’m now building CLIMB, the project’s mobile app, using React Native and Expo.",
 
     challenge:
-      "The research behind the project is deep, but it had to feel personal and approachable, not academic. The app needed to take thousands of scripture and conference records, organize them around a clear set of virtues, and turn a user's answers into guidance that feels thoughtful and trustworthy, then carry that same experience onto a phone.",
+      "There is a lot of research behind Character of Christ, including thousands of scriptures and General Conference talks. The challenge was making all of that information feel approachable and personal rather than overwhelming.\n\nThat meant thinking carefully about how people move through the content, how assessment results become useful next steps, and how we could use AI to personalize the experience without letting it replace the research behind it.",
 
     process: [
-      'Designed and built most of the front-end experience in React and TypeScript: Learn, Heal, Become, Share, and Profile',
-      'Built the three-part assessment flow with AI-generated results using Claude',
-      'Created Healing Tags, Study Journeys, and step-by-step CLIMB study guides for each virtue, with original artwork',
-      'Redesigned mentoring and messaging, notifications, and responsive mobile layouts',
-      'Built and curated the content data layer across 2,400+ scripture and General Conference records, applying a 25-virtue taxonomy and completing 874 data corrections',
-      'Developed the React Native / Expo mobile app, translating the web experience, AI functionality, and curated datasets into a mobile-first product'
+      "Designed and built much of the web experience, including the Learn, Heal, Become, Share, and Profile sections.",
+      "Built a three-part assessment that uses each person’s responses to generate personalized results and recommend areas for growth.",
+      "Created Healing Tags, Study Journeys, and guided CLIMB experiences that help users move from learning about a virtue to actually practicing it.",
+      "Redesigned mentoring, messaging, and notifications and improved the experience across mobile screen sizes.",
+      "Helped organize more than 2,400 scripture and General Conference records into a consistent 25-virtue framework, identifying and correcting 874 records along the way.",
+      "Began building CLIMB in React Native and Expo, bringing the experience to a dedicated mobile app for iOS and Android."
     ],
 
-    results: [
-      'Launched a live, full-stack web app on Azure at characterofchrist.org',
-      'Delivered personalized, AI-generated assessment reports tied to each user\'s answers',
-      'Improved the accuracy and consistency of the content library through large-scale data cleanup',
-      'Built a mobile-first companion app that brings the full experience to iOS and Android'
-    ],
+    impact:
+      "The web experience brings years of research into one place where people can explore, reflect, and create a path for personal growth. Each assessment becomes a personalized experience based on the individual’s own responses, while the underlying content library is now more accurate and consistent across more than 2,400 records.\n\nThe next step is CLIMB, which brings that experience to mobile and makes it easier to continue learning and practicing throughout everyday life.",
 
     reflection:
-      "This project sits right at the intersection of what I care about most: my faith and building things that help people. Working alongside a research team taught me how to take rich, complex material and make it simple enough that someone can open the app and actually feel invited to change. It's also been a great lesson in using AI thoughtfully: the goal was never to replace the content, but to help people find the part of it that speaks to them.",
+      "This project combines two things I care a lot about: my faith and building things people can actually use.\n\nThe hardest part wasn’t the code. It was taking a huge amount of thoughtful research and making it simple enough that someone could open the platform and feel invited instead of overwhelmed. It also changed the way I think about AI. We didn’t want AI to replace the content or do the thinking for someone. We use it to help people navigate the research and find what is most relevant to them.",
 
     gallery: [
       { src: '/images/characterOfChrist/coc3.jpg', alt: 'Character of Christ home page', caption: 'Home: "Become a little more like Him each day"' },
@@ -120,8 +118,8 @@ export const projects: Project[] = [
     slug: 'truebred',
     title: 'Truebred',
     subtitle:
-      'A trust-first marketplace for buying and selling performance horses, with vetted sellers, verified buyers, and every detail that matters up front.',
-    status: 'in-progress',
+      "A trusted marketplace for buying and selling horses, built around better information and more transparency.",
+    status: 'live',
     role: 'Co-Founder / Developer (Sandbox Venture Program)',
     timeline: 'August 2026 – Present',
     tools: [
@@ -136,40 +134,39 @@ export const projects: Project[] = [
     ],
     tags: ['Startup', 'Full Stack', 'Product'],
 
-    coverImage: '/images/truebred/cover.jpg',
+    coverImage: '/images/truebred/cover.png',
 
     overview:
-      "Truebred is a performance-horse marketplace I co-founded through Sandbox, BYU's year-long entrepreneurship program, where I lead technical product development. Buying a horse is a big, high-trust purchase, but most listings live in scattered social posts with little information. Truebred gives buyers the whole picture (photos, video, pedigree, competition results, and health records) and gives sellers a professional place to list.",
+      "Truebred is a horse marketplace I co-founded through Sandbox, BYU’s year-long entrepreneurship program, where I lead technical product development.\n\nBuying a horse is a big, high-trust purchase, but many horses are still sold through social media posts with limited information and no consistent process. We built Truebred to give sellers a professional place to list their horses and buyers a better way to understand what they’re looking at before starting a conversation.\n\nListings can include photos, videos, pedigree, competition history, health records, and other details that are often scattered across messages, documents, and social media.",
 
     challenge:
-      "Trust is the product. The platform had to make it easy for sellers to share detailed information while being honest about what's actually been verified, keep private documents private, and still feel simple for people who don't spend their days on marketplaces.",
+      "Trust is everything when you’re buying a horse. Buyers want enough information to feel confident moving forward, while sellers need a simple way to share a lot of detail without creating hours of extra work.\n\nWe also had to think carefully about what information had actually been verified, what came directly from the seller, and what needed to remain private. All of that had to feel straightforward for people who may not be especially comfortable with technology.",
 
     process: [
-      'Conducted customer interviews and industry research with horse owners, buyers, and sellers to identify pain points and validate requirements',
-      'Designed a detailed horse profile and listing editor with photo and video guidance, pedigree, competition results, and health records',
-      'Built marketplace search with discipline filters, radius search, and nearest-first sorting',
-      'Added seller vetting, messaging between buyers and sellers, offers, reviews, and saved horses',
-      'Migrated the backend to AWS with infrastructure as code (CDK) and automated deploys through GitHub Actions',
-      'Used AI-assisted development to iterate quickly, turning customer insights into features'
+      "Interviewed horse owners, buyers, sellers, and trainers to understand how horses are currently bought and sold and identify where the biggest trust gaps existed.",
+      "Designed and built detailed horse listings with photos, videos, pedigree, competition history, health information, and supporting records.",
+      "Built marketplace search with discipline filters, location-based search, and nearest-first results to make finding the right horse easier.",
+      "Created seller vetting, buyer applications, messaging, offers, reviews, and saved horses to support the process beyond simply finding a listing.",
+      "Built the platform on AWS using CDK and GitHub Actions, creating an infrastructure that can grow with the marketplace.",
+      "Used AI-assisted development throughout the process to move quickly from customer feedback to working features."
     ],
 
-    results: [
-      'Shipped a working staging version on AWS with accounts, listings, media, and saved horses live',
-      'Built honest trust labels so seller-entered records never appear as verified',
-      'Created a cost-aware architecture that scales to zero when idle'
-    ],
+    impact:
+      "Truebred is now live with user accounts, horse listings, photos and video, search, messaging, and other tools supporting the buying and selling process.\n\nMore importantly, our conversations with horse owners have shaped how the product works. Instead of treating every piece of information as equally trustworthy, Truebred is designed to clearly distinguish between what a seller has shared and what has actually been documented or verified.",
 
     reflection:
-      "Truebred has been my first real taste of building a company, not just a product. Talking with horse owners changed what I built more than any spec could. The features that matter most came straight from those conversations. It's taught me to move fast without losing sight of the thing that makes a marketplace work: people trusting each other.",
+      "Truebred is my first experience building a company, not just a product. Talking with horse owners has changed what I build more than any spec could, and many of the features that matter most have come directly from those conversations.\n\nIt has taught me how much I enjoy the part of development that happens before the code: asking questions, understanding how people already do something, and figuring out where technology can actually make it better. It has also taught me how to move quickly without losing sight of what makes a marketplace work in the first place: people being able to trust each other.",
 
-    links: []
+    links: [
+      { label: 'Live Site', href: 'https://truebredhorses.com/' }
+    ]
   },
 
   {
     slug: 'entrata-dashboards',
     title: 'Entrata: Internal Dashboards',
     subtitle:
-      'Two internal products I owned end-to-end as a Technical Intern on Entrata\'s People Team: a Facilities Ticket Dashboard and a Recruiting Operations Dashboard.',
+      "Two internal dashboards I built from start to finish during my summer internship on Entrata's People Team.",
     notice: {
       label: 'Demo Data',
       text: 'These tools were built for internal use at Entrata. All screenshots and videos use fictional, dummy data. No real employee, candidate, or company information is shown.'
@@ -223,29 +220,25 @@ export const projects: Project[] = [
     ],
 
     overview:
-      "I spent the summer as a Technical Intern on Entrata's People Team, embedded with Talent Acquisition. I came in wanting to learn recruiting end-to-end and explore how technology and AI could improve it, and I ended up owning two internal products from business problem to production. The Facilities Ticket Dashboard turns live Jira data from 1,000+ work orders into an operational view for the Facilities team. The Recruiting Operations Dashboard consolidates recruiting data into 6+ analytics areas: recruiter performance, interviews, offers, quality of hire, predictive insights, and personal recruiter dashboards.",
+      "I spent the summer as a Technical Intern on Entrata’s People Team, working closely with Talent Acquisition. I came in wanting to understand how recruiting worked and where technology could make it better, and I ended up owning two internal products from the first conversation through deployment.\n\nI built a Facilities Ticket Dashboard that turns more than 1,000 Jira work orders into a live view of what needs attention, and a Recruiting Operations Dashboard that brings recruiting data together to help the team understand recruiter performance, interviews, offers, quality of hire, and other trends.",
 
     challenge:
-      "Both teams had the data, but not the visibility. Facilities requests lived as individual Jira tickets, making it hard to spot aging or high-priority work. Recruiting information was spread across multiple systems. Beyond building the apps, I had to get them running securely inside an enterprise environment, handling authentication, role-based access, internal network restrictions, and deployment while working with IT and CloudOps along the way.",
+      "Both teams had plenty of data. The problem was being able to actually use it.\n\nFacilities requests lived across individual Jira tickets, making it difficult to quickly identify old, urgent, or recurring work. Recruiting data was spread across several different systems, making it hard to see the full picture in one place.\n\nBuilding the dashboards was only part of the challenge. I also had to get them running securely inside a large company, which meant working with IT and CloudOps on authentication, permissions, internal network requirements, and deployment.",
 
     process: [
-      'Discovery: met with Facilities, Talent Acquisition, and Recruiting Operations to understand workflows, gaps in visibility, and which metrics actually mattered',
-      'Facilities Dashboard: built in Next.js on the Jira API with ticket volume, age, priority, channel, and resolution trends, plus filtering, drill-downs, and links back to Jira',
-      'Recruiting Dashboard: combined Lever, GEM, and survey data into views for requisitions, interviews, offers, quality of hire, predictive analytics, and individual recruiter dashboards',
-      'Security: implemented Okta SSO and role-based access so sensitive recruiting data is only visible to the right people',
-      'Deployment: containerized both apps with Docker and built automated GitHub Actions pipelines to AWS ECS/Fargate using OIDC instead of long-lived credentials',
-      'Iteration: demoed to users, gathered feedback, and refined the apps, then presented the full story in an end-of-internship capstone'
+      "Met with Facilities, Talent Acquisition, and Recruiting Operations to understand how they worked, what they couldn’t easily see, and which information would actually help them make decisions.",
+      "Built the Facilities Dashboard in Next.js using the Jira API, with views for ticket volume, age, priority, channel, and resolution trends, along with filters, drill-downs, and links to individual tickets.",
+      "Built the Recruiting Operations Dashboard by bringing together data from Lever, GEM, and internal surveys into views for requisitions, interviews, offers, quality of hire, predictive insights, and individual recruiters.",
+      "Implemented Okta SSO and role-based access so sensitive recruiting information was only available to the right people.",
+      "Containerized both applications with Docker and created automated deployment pipelines through GitHub Actions and AWS ECS/Fargate.",
+      "Demoed both products to the teams throughout development, incorporated their feedback, and presented the finished work as my end-of-internship capstone."
     ],
 
-    results: [
-      'Shipped two production-ready internal applications built end-to-end',
-      'Gave a four-person Facilities team a live view across 1,000+ work orders',
-      'Consolidated recruiting data into 6+ actionable analytics areas for Talent Acquisition',
-      'Delivered secure authentication, role-based access, and automated deployments, with infrastructure reusable for future People Team projects'
-    ],
+    impact:
+      "By the end of the summer, I had taken two internal tools from initial conversations to production-ready applications.\n\nThe Facilities team gained one live view of more than 1,000 work orders, while Talent Acquisition gained a central place to understand recruiting activity and performance across multiple data sources. I also built reusable authentication and deployment patterns that could support future internal People Team projects.",
 
     reflection:
-      "The biggest lesson from Entrata was learning to build the right thing. The internship started out framed around AI and automation, but as I listened to the teams, it became clear the most valuable solution was giving them visibility into data they already had. The coolest technical idea isn't always the most useful one. I also learned what happens after code works on your laptop: security, infrastructure, and working across teams to get something into people's hands. It confirmed that I love working at the intersection of people, product, and technology.",
+      "My biggest lesson at Entrata was the importance of making sure I was building the right thing.\n\nThe internship was initially framed around AI and automation, but the more I listened to the teams, the clearer it became that what they needed most was visibility into data they already had. The most technically exciting solution isn’t always the most useful one.\n\nI also learned how much happens after the code works on your laptop. Getting these tools into people’s hands meant thinking about security, infrastructure, deployment, and working across teams, and that experience made me a much more well-rounded developer.",
 
     links: []
   },
@@ -254,8 +247,8 @@ export const projects: Project[] = [
     slug: 'sleepedge-advisory',
     title: 'SleepEdge Advisory',
     subtitle:
-      'A refined, physician-led brand site for a sleep medicine consulting practice serving sleep centers, corporations, and elite teams.',
-    status: 'in-progress',
+      "A website for a physician-led sleep medicine consulting practice that works with sleep centers, companies, and elite sports teams.",
+    status: 'live',
     role: 'UI/UX Designer & Front-End Developer',
     timeline: 'September 2026',
     tools: [
@@ -272,35 +265,34 @@ export const projects: Project[] = [
     coverImage: '/images/sleepEdge/cover.jpg',
 
     overview:
-      "SleepEdge Advisory is a consulting practice led by a board-certified sleep medicine physician. The site introduces the practice and speaks to three distinct audiences (sleep centers and clinics, corporations, and elite athletic teams), with every page leading to one clear next step: booking an informational session.",
+      "SleepEdge Advisory is a consulting practice led by a board-certified sleep medicine physician. I designed and built the website from the client’s existing brand, creating an experience for three different audiences: sleep centers and clinics, companies, and elite athletic teams.\n\nEach audience has different needs, but the site is built around one clear goal: helping the right people understand the practice and easily book an informational session.",
 
     challenge:
-      "The brand needed to feel premium and credible to three very different audiences, while keeping the message simple. I had to translate the client's brand kit into a web design system and make booking feel effortless without sending people away from the site.",
+      "The site needed to feel polished and credible to three very different audiences without making the experience feel complicated. I also needed to translate an existing brand kit into a complete web experience and make booking a session as simple as possible.",
 
     process: [
-      'Translated the brand kit into a web design system: deep navy and gold palette, uppercase grotesk labels, and an elegant serif for headings and body',
-      'Designed a dedicated page for each audience with its own services and messaging',
-      'Built the site in React with all copy managed from a single content file for easy updates',
-      'Integrated Calendly in an in-page booking overlay that loads only when needed and returns focus when closed',
-      'Added subtle scroll-reveal motion that turns off for users who prefer reduced motion',
-      'Designed responsive layouts for desktop, tablet, and mobile'
+      "Translated the client’s existing brand into a consistent design system for the web.",
+      "Designed dedicated pages for each audience, with services and messaging specific to their needs.",
+      "Built the site in React and organized the content so future copy changes are simple to make.",
+      "Integrated Calendly directly into the experience so visitors can book a session without leaving the site.",
+      "Added subtle interactions and scroll animations while supporting users who prefer reduced motion.",
+      "Designed responsive layouts across desktop, tablet, and mobile."
     ],
 
-    results: [
-      'Delivered a cohesive four-page brand site built from client-approved copy',
-      'Made booking a session possible from any page in one click',
-      'Built with accessibility in mind, including keyboard focus states and reduced-motion support'
-    ],
+    impact:
+      "The finished site gives SleepEdge Advisory a professional home for introducing the practice, explaining its services, and turning interested visitors into conversations.\n\nVisitors can reach the booking experience from anywhere on the site, while accessibility features like keyboard focus states and reduced-motion support are built into the experience from the start.",
 
     reflection:
-      "This project was all about restraint. With a strong brand to work from, my job was to let it breathe with generous spacing, a few confident colors, and nothing that distracts from the call to action. It reinforced that good design for a professional service is really about building trust quickly.",
+      "This project was all about restraint. The brand was already strong, so my job was to give it room rather than add more to it. I focused on generous spacing, a few confident visual choices, and keeping the path to booking a session clear.\n\nIt reminded me that good design doesn’t always mean adding more. For a professional service like this, it’s often about creating clarity and earning trust quickly.",
 
     gallery: [
       { src: '/images/sleepEdge/sleepCenters.png', alt: 'SleepEdge Advisory sleep centers page' },
       { src: '/images/sleepEdge/mobile1.png', alt: 'SleepEdge Advisory mobile home page', size: 'third' }
     ],
 
-    links: []
+    links: [
+      { label: 'Live Site', href: 'https://www.sleepedgeadvisory.com/' }
+    ]
   },
 
   {
@@ -325,28 +317,25 @@ export const projects: Project[] = [
     coverImage: '/images/devynAndJace/cover.jpg',
 
     overview:
-      "I designed and built a wedding website for my sister Devyn and her fiancé Jace's wedding weekend in Waynesboro, Virginia. The site walks guests through everything they need, from the couple's story and a day-by-day schedule to travel and lodging, local activity and restaurant recommendations, registry, FAQ, and RSVP, all in a warm, summer garden-party style.",
+      "I designed and built a website for my sister Devyn and her fiancé Jace’s wedding weekend in Waynesboro, Virginia. It gave guests one place to find everything they needed, including the weekend schedule, travel and lodging information, things to do nearby, FAQs, the registry, and RSVP.\n\nI designed the site around a warm summer garden-party feel that matched the wedding and felt personal to them.",
 
     challenge:
-      "Guests needed one place to find everything for a multi-day event, and the couple needed a simple way to collect RSVPs without paying for a wedding platform or managing a database. The RSVP flow also had to be limited to invited guests and easy for anyone, of any age, to use.",
+      "With events happening across multiple days, guests needed an easy way to know where to be, when to be there, and what they needed to know before arriving.\n\nThe couple also needed a simple way to collect and manage RSVPs without paying for a wedding platform or maintaining a database. The RSVP needed to work only for invited guests while still being easy for guests of any age to use.",
 
     process: [
-      'Designed a custom summer garden-party palette with Cormorant Garamond and Jost typography',
-      'Built seven pages in React and TypeScript with hand-written CSS and a responsive mobile menu',
-      'Created a tabbed day-by-day schedule that other pages can link directly into',
-      'Built a guest-list RSVP: guests search for their names, select everyone in their party, and submit',
-      'Used Google Apps Script as a lightweight backend that serves the guest list and writes every RSVP to a Google Sheet',
-      'Deployed on Cloudflare Pages and kept content updated through the wedding'
+      "Designed a custom visual identity inspired by the wedding’s summer garden-party style.",
+      "Built seven responsive pages in React and TypeScript for the schedule, travel, recommendations, FAQs, registry, RSVP, and the couple’s story.",
+      "Created a day-by-day schedule that guests could easily navigate and link directly to from other parts of the site.",
+      "Built a guest-list RSVP where guests could search for their name, select the members of their party, and submit their response.",
+      "Connected the RSVP to Google Sheets through Google Apps Script, giving the couple a simple way to manage responses without a traditional database.",
+      "Continued updating the site as plans changed leading up to the wedding."
     ],
 
-    results: [
-      'Launched a live site that guests used for the entire wedding weekend',
-      'Collected RSVPs directly into a Google Sheet the couple could manage themselves, with no database or paid platform needed',
-      'Gave guests one clear, mobile-friendly source for schedule, travel, and FAQs'
-    ],
+    impact:
+      "Guests used the site throughout the wedding weekend as a central place for the schedule, travel information, recommendations, and FAQs.\n\nRSVPs went directly into a Google Sheet the couple could manage themselves, giving them the functionality they needed without paying for another platform or learning a new system.",
 
     reflection:
-      "Building this for my sister was such a fun one. It's a small project, but it had real users on a real deadline, and every detail mattered to the people it was for. Using a Google Sheet as the backend was the right call. It kept things simple for the couple and let me focus on making the experience feel personal.",
+      "Building this for my sister was so much fun. It was a smaller project, but it had real users, a real deadline, and details that genuinely mattered to the people using it.\n\nIt also reinforced that the best technical solution doesn’t have to be the most complicated one. Using a Google Sheet as the backend kept things simple for the couple and let me spend more time making the experience feel personal to them.",
 
     gallery: [
       { src: '/images/devynAndJace/dev1.jpg', alt: 'Devyn & Jace wedding site home page', caption: 'Home: hero with the couple and RSVP' },
@@ -365,7 +354,7 @@ export const projects: Project[] = [
     slug: 'letters-to-jesus',
     title: 'Letters to Jesus',
     subtitle:
-      'A React platform built to gather and display heartfelt letters to Jesus, bringing a community Easter tradition to life online.',
+      "A website for a community Easter project where people write letters to Jesus and read what others have written.",
     status: 'live',
     role: 'Full-Stack Developer / Designer',
     timeline: 'March 2026',
@@ -381,26 +370,24 @@ export const projects: Project[] = [
     coverImage: '/images/lettersToJesus/cover.png',
 
     overview:
-      "Letters to Jesus is a community Easter project inspired by Elder Gary E. Stevenson's invitation to build more Christ-centered Easter traditions. The idea is simple: people write letters to Jesus (prayers, poems, songs, drawings, or anything on their heart), and those letters are displayed in art galleries for others to read and reflect on. The website brings that experience online, making it easy for anyone to submit a letter and read what others have written. What makes it powerful is the range of voices: people from different backgrounds being genuinely honest about their lives, their questions, their fears, and their faith, and how they still turn to Jesus.",
+      "Letters to Jesus is a community Easter project inspired by Elder Gary E. Stevenson’s invitation to create more Christ-centered Easter traditions. People write letters to Jesus through prayers, poems, songs, drawings, or simply whatever is on their heart, and the letters are displayed in art galleries for others to read.\n\nI built the website to bring that experience online, giving people a place to submit their own letter and read what others have shared.",
 
     challenge:
-      "The site needed to feel warm, personal, and accessible, matching the spirit of the project itself. It also needed a reliable submission system so that every letter sent through the site would actually reach us without manual follow-up.",
+      "The website needed to feel as warm and personal as the project itself. We wanted people to feel comfortable sharing something meaningful, while keeping the experience simple enough that the technology never got in the way.\n\nWe also needed a submission process we could rely on so every letter sent through the site reached our team without creating additional work behind the scenes.",
 
     process: [
-      'Designed a clean, welcoming interface that reflects the spirit of the project',
-      'Built the front-end with React and JavaScript',
-      'Integrated EmailJS so every submitted letter is automatically delivered to our email with no backend server required',
-      'Deployed and launched the live site in time for Easter 2026'
+      "Designed a simple, welcoming experience that reflects the spirit of the project.",
+      "Built the website in React and JavaScript.",
+      "Created an online letter submission experience and connected EmailJS so each submission is automatically delivered to our team.",
+      "Built a space where visitors can read letters others have chosen to share.",
+      "Deployed and launched the site in time for Easter 2026."
     ],
 
-    results: [
-      'Launched a live platform for the Letters to Jesus community project',
-      'Automated letter submission and delivery via EmailJS',
-      'Built and deployed end-to-end independently'
-    ],
+    impact:
+      "Letters to Jesus launched online for Easter 2026, extending a project that had previously lived primarily in physical gallery spaces.\n\nThe website gives people a way to participate wherever they are, while automatically delivering each submission to our team and making it easier to share the project with more people.",
 
     reflection:
-      "This is one of my favorite things I've built, not because of the tech, but because of what it's for. Getting to combine something I care deeply about with the skills I've been building has been really meaningful. It's a good reminder that the best projects are the ones that actually matter to people.",
+      "This is one of my favorite things I’ve built, not because of the technology, but because of what it’s for.\n\nGetting to use the skills I’ve been building on something I care this much about has been really meaningful. It reminded me that some of the best projects aren’t the most technically complicated. They’re the ones that help create an experience people genuinely care about.",
 
     gallery: [
       { src: '/images/lettersToJesus/home1.png', alt: 'Letters to Jesus homepage' },
@@ -419,7 +406,7 @@ export const projects: Project[] = [
     slug: 'candid',
     title: 'Candid',
     subtitle:
-      'An AI-powered talent optimization platform that combines machine learning, LLM explanations, and full-stack workflows to make hiring and growth decisions more transparent.',
+      "An AI talent platform my team built for the EY-sponsored AIS SCLC competition. It matches people to roles and explains every recommendation in plain language.",
 
     role: 'Full-Stack Developer + UX/UI (React, Node, PostgreSQL)',
     timeline: 'AIS SCLC 2026 Competition (Sponsored by EY)',
@@ -450,33 +437,25 @@ export const projects: Project[] = [
     },
 
     overview:
-      "Candid is an AI-driven talent management platform built for the AIS SCLC competition sponsored by EY. It helps enterprises map employee skills to open roles, rank candidates using a hybrid ML scoring system, and generate personalized upskilling plans with clear, human-readable explanations. The platform balances intelligent automation with transparency and governance-minded design.",
+      "Candid is an AI talent management platform my team built for the 2026 AIS SCLC competition, sponsored by EY. We were selected as finalists and presented the project at James Madison University.\n\nCandid helps companies understand the skills they already have, match employees and applicants to open roles, and identify opportunities for growth. On the team, I owned the React application, database, authentication, and UX.",
 
     challenge:
-      "Traditional HR systems are either manual and slow or automated without transparency. The challenge was building a system that goes beyond keyword matching, learns from historical hiring data, and still explains its decisions clearly. At the same time, we had to consider bias, privacy, and responsible handling of sensitive workforce data.",
+      "Hiring tools can make it easier to sort through candidates, but automation creates a new problem when no one understands why a recommendation was made.\n\nWe wanted Candid to go beyond simple keyword matching and learn from past hiring data while still making every recommendation understandable. Because we were working with workforce data, we also had to think carefully about privacy, bias, and how much trust we were asking users to place in the system.",
 
     process: [
-      'Designed and built the full React front-end with a clean, role-based experience (manager vs viewer)',
-      'Implemented authentication, secure login, user creation, and role-based access control',
-      'Built full CRUD workflows for jobs, employees, applicants, and platform management',
-      'Designed and implemented the PostgreSQL database schema to support skill mapping and role requirements',
-      'Developed a hybrid matching system combining weighted skill comparisons (70%) and a logistic regression model trained on historical hiring data (30%)',
-      'Integrated resume PDF parsing to automatically extract candidate skills and reduce manual entry',
-      'Embedded Tableau analytics for high-level hiring and workforce insights',
-      'Integrated Claude AI to generate explainable recommendation summaries and structured upskilling plans',
-      'Implemented privacy policy visibility and governance-aware UX to reinforce transparency'
+      "Designed and built the React experience, including separate views and permissions for different types of users.",
+      "Built authentication, role-based access, and workflows for managing jobs, employees, applicants, and users.",
+      "Designed the PostgreSQL database around employee skills, candidate skills, and role requirements.",
+      "Helped build a hybrid matching system that combines direct skill comparisons with a machine learning model trained on past hiring data.",
+      "Added resume parsing that automatically identifies candidate skills and integrated Tableau dashboards for a broader view of hiring and workforce data.",
+      "Integrated Claude to explain recommendations in plain language and create personalized, step-by-step upskilling plans."
     ],
 
-    results: [
-      'Delivered a working full-stack prototype using React, Node, and PostgreSQL',
-      'Created ranked candidate recommendations based on hybrid ML + weighted scoring logic',
-      'Built transparent skill breakdowns so managers can see exactly where candidates meet or miss requirements',
-      'Generated personalized, sequenced upskilling plans with timeline estimates and downloadable PDFs',
-      'Implemented secure role-based access so managers and viewers see appropriate functionality'
-    ],
+    impact:
+      "Candid was selected as a finalist in the 2026 AIS SCLC competition, where we presented a working full-stack prototype at James Madison University.\n\nThe platform could rank candidates using both skill alignment and historical hiring data while showing managers where each person met or missed a role’s requirements. It could also turn those gaps into personalized upskilling plans with recommended steps, time estimates, and downloadable reports.",
 
     reflection:
-      "Candid reinforced that strong AI products depend on trust. The most important part wasn't just building a matching algorithm, it was designing clarity around it. From weighted scoring to AI-generated explanations, every decision needed to be understandable. Owning the React app, database, authentication system, and UX allowed me to ensure the product felt simple, secure, and genuinely useful.",
+      "Candid taught me that an AI product is only useful if people can trust what it’s doing.\n\nThe matching algorithm mattered, but just as important was making it clear why someone was recommended for a role. Because I owned the application experience, database, authentication, and UX, I got to think about that problem from both sides: how the system makes a decision and how a person understands that decision.\n\nIt made me much more interested in building AI that doesn’t just give people an answer, but helps them understand where that answer came from.",
 
     documents: [
       { label: 'Presentation Slides', href: '/images/candid/CandidSlides.pdf' }
@@ -491,7 +470,7 @@ export const projects: Project[] = [
     slug: 'career-launch',
     title: 'Career Launch',
     subtitle:
-      'A student-first redesign that made career resources clearer, more consistent, and easier to navigate across majors.',
+      "A redesign of BYU's Career Launch site that makes career resources clearer and easier to find for students in every major.",
     role: 'Website Designer / UX (Brightspot CMS)',
     timeline: '2024–2025',
     tools: [
@@ -518,27 +497,27 @@ export const projects: Project[] = [
     },
 
     overview:
-      "Career Launch is a student-facing website experience designed to help students quickly understand career pathways, deadlines, and next steps. My focus was building a clear student story: what a student is trying to do, what they need at each step, and how we can make that process feel simple instead of overwhelming.",
+      "Career Launch helps BYU students understand their career paths, deadlines, and next steps. I worked on it as a web designer at the BYU Marriott Business Career Center. I started by thinking through what a student is actually trying to do and what they need at each step, then designed the site around that so it feels simple instead of overwhelming.",
 
     challenge:
-      "The biggest challenge was clarity at scale: the site needed to work across majors, stay consistent, and still feel intuitive. That meant simplifying content, streamlining navigation, and aligning with multiple stakeholders while meeting the requirements needed for an outward-facing, officially approved experience.",
+      "The site had to work for a lot of different majors, stay consistent, and still be easy to use. That meant simplifying the content, cleaning up the navigation, and getting several stakeholders on the same page, all while meeting the requirements for an official, public-facing BYU site.",
 
     process: [
-      'Discovery: mapped the student journey and identified where students were getting stuck',
-      'Content + IA: simplified language and restructured pages so key actions were easier to find',
-      'Design: created an initial Figma draft to validate layout, hierarchy, and flow',
-      'Implementation: built the final experience in Brightspot CMS with a consistent system across pages',
-      'Alignment: presented the student story + design rationale for approval (including outward-facing launch requirements)'
+      "Mapped the student journey to find where students were getting stuck",
+      "Simplified the language and restructured pages so the most important actions were easy to find",
+      "Made a first draft in Figma to test the layout, hierarchy, and flow",
+      "Built the final site in Brightspot CMS with a consistent system across pages",
+      "Presented the student journey and my design reasoning to stakeholders for approval"
     ],
 
     results: [
-      'Created a clearer, more streamlined experience that supports multiple majors with consistent navigation',
-      'Strengthened the “student story” so content is easier to understand and act on',
-      'Earned stakeholder approval to move forward with outward-facing implementation'
+      "A clearer, simpler site that works across majors with consistent navigation",
+      "Content organized around what students need to do next, so it's easier to understand and act on",
+      "Approved by stakeholders and launched publicly at careerlaunch.byu.edu"
     ],
 
     reflection:
-      "This project taught me how much great UX is communication. The work wasn't just designing pages. It was aligning people around a simple story: what students need, why it matters, and how we can remove friction. I loved the mix of strategy, design, and real implementation, and it reinforced that the best work is always about the people using it.",
+      "This project showed me how much of UX is communication. The work wasn't only designing pages. It was getting people to agree on a simple story: what students need, why it matters, and what's getting in their way. I loved getting to do the strategy, the design, and the actual build.",
 
 
     documents: [
@@ -562,7 +541,7 @@ export const projects: Project[] = [
     slug: 'blushing-blossoms',
     title: 'Blushing Blossoms & Co.',
     subtitle:
-      'A timeless, editorial floral website built for a real client, designed for elegance, ease of use, and a gallery that updates itself.',
+      "A website for a wedding and event florist, with an elegant editorial look and a gallery that updates itself.",
     status: 'live',
     role: 'UI/UX Designer & Front-End Developer',
     timeline: 'January–March 2026',
@@ -577,29 +556,24 @@ export const projects: Project[] = [
     coverImage: '/images/blushingBlossoms/cover.png',
 
     overview:
-      "Blushing Blossoms & Co. is a wedding and event floral studio run by a friend. She needed a website that felt as elevated and intentional as her arrangements. I led the design and front-end development while her husband handled the rentals and admin backend. The result is a clean, editorial experience with a warm cream and burgundy palette, refined typography, and a gallery that stays current without any technical effort from the owner.",
+      "Blushing Blossoms & Co. is a wedding and event floral studio run by a friend of mine. She wanted a website that felt as thoughtful and polished as the arrangements she creates.\n\nI led the design and front-end development, creating a warm, editorial experience that showcases her work and gives potential clients an easy way to explore her services, pricing, rentals, and past events.",
 
     challenge:
-      "The site needed to feel timeless and professional while being genuinely easy to maintain. The biggest UX challenge was building a gallery that could scale, since the client is constantly adding new photos and needed a way to keep the site updated without ever touching code.",
+      "The site needed to feel timeless and professional, but it also needed to be easy for her to maintain.\n\nThe biggest challenge was the gallery. She is constantly photographing new arrangements and already had a system for organizing those photos. Rather than giving her another platform to learn and maintain, I wanted the website to fit naturally into the way she was already working.",
 
     process: [
-      'Designed the full visual language: cream and burgundy palette, serif + script typography, editorial page layouts',
-      'Built the front-end in React and TypeScript with a focus on consistency and responsiveness across all pages',
-      'Integrated the Google Drive API so the gallery pulls photos automatically from Drive folders, so the owner drops photos in a folder and they appear on the site',
-      'Structured and designed navigation across Home, Gallery, Rentals, Inquiry, and Pricing',
-      'Collaborated with the client\'s husband on connecting the admin and rentals backend',
-      'Designed mobile-first throughout with attention to how the layouts shift and scale'
+      "Designed the visual direction of the site, including the color palette, typography, and editorial-style layouts.",
+      "Built the front end in React and TypeScript with responsive layouts across the entire site.",
+      "Connected the gallery to Google Drive so new photos can appear on the website simply by adding them to a folder.",
+      "Designed the navigation and experience across the Home, Gallery, Rentals, Inquiry, and Pricing pages.",
+      "Worked with another developer to connect the front end to the rentals and admin functionality."
     ],
 
-    results: [
-      'Delivered a live, production-ready website for a real client',
-      'Built a self-updating gallery powered by the Google Drive API, with zero technical effort needed from the owner',
-      'Created a consistent design system across all pages',
-      'Launched at blushingblossoms.co'
-    ],
+    impact:
+      "Blushing Blossoms now has a professional website that gives potential clients one place to explore the studio’s work and services.\n\nMore importantly, the gallery stays current without requiring the owner to touch the website. She can continue managing photos in Google Drive the way she already does, and the site takes care of the rest.",
 
     reflection:
-      "This was one of the most satisfying projects I've worked on. There's something special about building for someone you know and watching it actually serve their business. The Google Drive gallery was a fun problem to solve: instead of building a CMS or teaching the client to manage uploads, we connected directly to where she already stores her photos. That's the kind of solution that just works.",
+      "This was one of the most satisfying projects I’ve worked on because I got to build something for someone I know and then watch it become part of her business.\n\nThe Google Drive gallery was my favorite problem to solve. I could have built a CMS or given her another admin tool, but neither would have made her life easier. Connecting the site to the place she already keeps her photos was simpler for her and ultimately made the website more useful.\n\nIt reinforced something I’ve learned across a lot of my projects: sometimes the best solution is the one that asks the least from the person using it.",
 
     gallery: [
       { src: '/images/blushingBlossoms/home1.png', alt: 'Blushing Blossoms home section' },
@@ -618,7 +592,7 @@ export const projects: Project[] = [
     slug: 'intex-project-2',
     title: 'INTEX: CineNiche',
     subtitle:
-      'A four-day sprint building a full-stack movie recommendation app with personalized pipelines and role-based security.',
+      "A movie recommendation app my team built from scratch in four days, with personalized recommendations and role-based security.",
     role: 'UX + Product Thinking, Full-Stack Delivery, Team Collaboration',
     timeline: 'BYU INTEX (4 days)',
     tools: [
@@ -704,29 +678,29 @@ export const projects: Project[] = [
 
 
     overview:
-      "INTEX is BYU's four-day Integrated Experience where teams build full-stack solutions under serious time pressure. For CineNiche, our team built a movie recommendation app from scratch, designing a clean user experience with React, building APIs and backend logic in .NET, and creating personalized recommendation pipelines using Python.",
+      "INTEX is BYU's four-day Integrated Experience, where teams build a full-stack product under a lot of time pressure. For CineNiche, my team built a movie recommendation app from scratch: a React front end, APIs and backend logic in .NET, and recommendation pipelines in Python. I focused on the user experience and also helped with the backend logic, security, and deployment.",
 
     challenge:
-      "We needed to ship a polished, secure, and usable product in four days while balancing UX decisions with real backend logic, authentication, and deployment constraints.",
+      "We had four days to ship something polished, secure, and easy to use, which meant constantly balancing design decisions against backend logic, authentication, and deployment.",
 
     process: [
-      'Scrum-based planning and rapid iteration',
-      'UX design focused on clean browsing and discovery',
-      'API and backend logic built in .NET',
-      'Python-based recommendation pipelines',
-      'Cookies + personalization to improve continuity',
-      'Role-based authentication and Azure deployment'
+      "Planned and worked in quick Scrum sprints",
+      "Designed the experience around easy browsing and discovering new movies",
+      "Built APIs and backend logic in .NET",
+      "Built recommendation pipelines in Python",
+      "Used cookies to remember users and personalize what they see",
+      "Added role-based authentication and deployed to Azure"
     ],
 
     results: [
-      'Delivered a full-stack recommendation app in 4 days',
-      'Implemented secure role-based authentication',
-      'Created personalized recommendation pipelines',
-      'Deployed and demoed the app to working professionals'
+      "Built and delivered a full-stack recommendation app in four days",
+      "Secured the app with role-based authentication",
+      "Built personalized recommendation pipelines",
+      "Deployed the app and demoed it to working professionals"
     ],
 
     reflection:
-      "INTEX was an experience where everything came together. In just four days, we took months of learning and applied it to a real, working product. Building CineNiche pushed me to think end-to-end, designing a clean, intuitive user experience while also contributing to backend logic, security, and deployment. I'm especially grateful for my team and the opportunity to learn alongside them. This project strengthened my confidence in building people-first experiences while balancing real technical constraints.",
+      "INTEX was where a lot of what I'd learned finally came together. In four days we turned months of classes into a working product. It pushed me to think about the whole thing at once, designing an experience that felt simple while also working on the backend, security, and deployment. I learned a lot from my team, and I'm grateful I got to build it with them.",
 
     links: [
       { label: 'View Slides', href: '/INTEX2Slides.pdf' },
@@ -738,7 +712,7 @@ export const projects: Project[] = [
     slug: 'intex-project-1',
     title: 'INTEX: Turtle Shelter Project',
     subtitle:
-      'A four-day sprint delivering a people-first, full-stack website for a nonprofit supporting individuals experiencing homelessness.',
+      "A full-stack website my team built in four days for a nonprofit that supports people experiencing homelessness.",
     role: 'UX + Web Design, Full-Stack Delivery, Team Collaboration',
     timeline: 'BYU INTEX (4 days)',
     tools: [
@@ -811,28 +785,28 @@ export const projects: Project[] = [
 
 
     overview:
-      "INTEX is a four-day, immersive experience where student teams design and ship real solutions for real organizations. For this project, our team partnered with The Turtle Shelter Project, a nonprofit supporting individuals experiencing homelessness. In just four days, we designed and deployed a full-stack website that balanced clarity and empathy with real functionality: a structured database for CRUD workflows and embedded Tableau dashboards to visualize key data in a way that was actually useful.",
+      "INTEX is a four-day project where student teams design and ship real solutions for real organizations. Our team worked with The Turtle Shelter Project, a nonprofit supporting people experiencing homelessness. In four days we designed and deployed a full-stack website with a database for managing their records and embedded Tableau dashboards that made their data easier to understand.",
 
     challenge:
-      "We had to move fast while building something real: a site that felt welcoming and easy to navigate, while also handling data responsibly. The challenge was keeping the experience simple for users, even while the backend, database structure, and deployment were happening behind the scenes.",
+      "We had to move fast and still build something real. The site needed to feel welcoming and easy to navigate, and it also had to handle data responsibly. The goal was to keep things simple for users while the database, backend, and deployment came together behind the scenes.",
 
     process: [
-      'Research: aligned on users, goals, and what the organization needed most',
-      'UX + UI Design: structured the site for clarity, readability, and easy navigation',
-      'Build: implemented full-stack functionality with server-rendered views (EJS), database models, and CRUD workflows',
-      'Data Visualization: embedded dynamic Tableau dashboards to make data easier to understand',
-      'Deployment: shipped a working product to AWS under a tight deadline'
+      "Aligned as a team on who the users were and what the organization needed most",
+      "Designed the site to be clear, readable, and easy to navigate",
+      "Built server-rendered pages with EJS, database models, and workflows for creating and managing records",
+      "Embedded Tableau dashboards to make the data easier to understand",
+      "Deployed a working site to AWS before the deadline"
     ],
 
     results: [
-      'Designed and deployed a full-stack site in 4 days',
-      'Built database structure + CRUD functionality (PostgreSQL/pgAdmin)',
-      'Embedded Tableau dashboards for dynamic data visualization',
-      'Delivered a cleaner, more user-friendly experience focused on real people'
+      "Designed and deployed a full-stack site in four days",
+      "Built the database structure and record management in PostgreSQL",
+      "Embedded interactive Tableau dashboards",
+      "Delivered a cleaner, easier-to-use site for the organization"
     ],
 
     reflection:
-      "This project reinforced how much I love building for real people. It wasn't just about shipping features. It was about making something clear, usable, and respectful, while still delivering real full-stack functionality under pressure.",
+      "This project reminded me how much I like building for people with a real need. It wasn't just about shipping features. It was about making something clear and respectful for the people using it, while still getting the full stack working under a tight deadline.",
 
     links: [
       { label: 'View Slides', href: '/images/turtle/Turtle-Shelter-Slides.pdf' },
@@ -845,7 +819,7 @@ export const projects: Project[] = [
     slug: 'temple-scheduler',
     title: 'Temple Appointment Scheduler',
     subtitle:
-      'A design sprint focused on simplifying scheduling through thoughtful UX and strong Scrum execution.',
+      "A team design sprint to make scheduling a temple appointment simpler and less stressful.",
     role: 'Product Design / UX, Scrum Team Member',
     timeline: 'Design Sprint',
     tools: [
@@ -859,26 +833,26 @@ export const projects: Project[] = [
     coverImage: '/images/templescheduler/cover1.png',
 
     overview:
-      "The Temple Scheduler project was a design-focused sprint centered on improving the appointment scheduling experience. While the product was not fully built, our team focused on creating a thoughtful, user-centered solution backed by strong UX decisions and Scrum practices.",
+      "This was a design sprint focused on making it easier to schedule a temple appointment. We didn't build the final app. Instead, our team focused on understanding users, designing a thoughtful solution in Figma, and running a strong Scrum process.",
 
     challenge:
-      "Scheduling can be confusing, time-consuming, and frustrating. Our challenge was to design a simplified, intuitive experience that reduced friction and made the process feel calm, clear, and accessible for users.",
+      "Scheduling can be confusing and frustrating. We wanted to design an experience that took the friction out and made the process feel calm, clear, and accessible.",
 
     process: [
-      'Mapped the end-to-end scheduling journey to identify friction points',
-      'Designed user flows and interface concepts in Figma',
-      'Worked through Scrum ceremonies including planning, retrospectives, and iteration',
-      'Collaborated closely as a team to refine the experience'
+      "Mapped the full scheduling journey to find the frustrating parts",
+      "Created personas, a journey map, wireframes, and a high-fidelity prototype in Figma",
+      "Worked through Scrum planning, retrospectives, and iterations",
+      "Refined the design together as a team"
     ],
 
     results: [
-      'Recognized with the “Most Scrumptious Award” for strong Scrum execution',
-      'Delivered a polished prototype and design solution',
-      'Strengthened skills in product thinking, UX design, and team collaboration'
+      "Won the “Most Scrumptious Award” for strong Scrum execution",
+      "Delivered a polished, high-fidelity prototype",
+      "Grew my skills in product thinking, UX design, and teamwork"
     ],
 
     reflection:
-      "This project reminded me that strong products start with strong thinking. Even without building the final application, the process of aligning on user needs, collaborating through Scrum, and refining the experience was incredibly valuable, and a great example of how good design work happens before a single line of code is written.",
+      "This project reminded me that good products start with good thinking. Even without building the app, working through user needs, collaborating in Scrum, and refining the design together taught me a lot. Some of the most important design work happens before anyone writes code.",
 
     gallery: [
       {
@@ -922,7 +896,7 @@ export const projects: Project[] = [
   slug: 'als-windows',
   title: "Al's Windows",
   subtitle:
-    'Full-stack website for a local window cleaning business, built and deployed end-to-end.',
+    "A full-stack website for a local window cleaning business, which I designed, built, and deployed myself.",
 
   role: 'Full-Stack Developer / Designer',
   timeline: 'June 2025 – Present',
@@ -944,27 +918,27 @@ export const projects: Project[] = [
   },
 
   overview:
-    "Al's Windows is a full-stack website built for a local window cleaning business to support real customers and real operations. I designed and developed the entire system end-to-end, focusing on a clean customer experience while building a secure backend to manage quotes, customers, and scheduling.",
+    "Al's Windows is a local window cleaning business, and I built their website to support real customers and day-to-day operations. I designed and developed the whole thing: a clean site for customers and a secure backend for managing quotes, customers, and scheduling.",
 
   challenge:
-    "The challenge was to create a professional, trustworthy site that could handle real customer data while remaining simple and approachable. The solution needed to support online scheduling, administrative workflows, and secure deployment.",
+    "The site needed to look professional and trustworthy while handling real customer data, and still be simple to use. It also had to support online scheduling, admin workflows, and secure deployment.",
 
   process: [
-    'Designed a clean, user-friendly interface focused on trust and clarity',
-    'Built server-rendered views using JavaScript and EJS',
-    'Designed and implemented a PostgreSQL database with full CRUD functionality',
-    'Configured CI/CD pipelines and deployed securely on AWS with HTTPS'
+    "Designed a clean, easy-to-use interface that builds trust",
+    "Built server-rendered pages with JavaScript and EJS",
+    "Designed a PostgreSQL database and built the workflows to create, edit, and manage records",
+    "Set up CI/CD and deployed securely on AWS with HTTPS"
   ],
 
   results: [
-    'Delivered a production-ready site for a real business',
-    'Implemented CRUD functionality for quotes and customer management',
-    'Secured the application with authentication and access controls',
-    'Handled design, development, and deployment independently'
+    "Delivered a production-ready site for a real business",
+    "Built tools for managing quotes and customers",
+    "Secured the app with authentication and access controls",
+    "Handled the design, development, and deployment on my own"
   ],
 
   reflection:
-    "This project pushed me to think beyond the interface and build something dependable for real people. Owning the full stack, from design to database to deployment, reinforced how much I enjoy creating solutions that balance thoughtful user experience with solid technical foundations.",
+    "This project pushed me to think beyond the interface and build something a real business could rely on. Owning everything from the design to the database to deployment showed me how much I enjoy work where good user experience and solid engineering go together.",
 
   links: [
     { label: 'GitHub', href: 'https://github.com/tatematley/als-windows' }
