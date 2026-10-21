@@ -1,16 +1,25 @@
+import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { projects } from '../data/projects';
+import Lightbox from '../components/Lightbox';
+
+function Paragraphs({ text }: { text: string }) {
+  return text.split('\n\n').map((para) => <p key={para}>{para}</p>);
+}
 
 export default function ProjectDetail() {
   const { slug } = useParams();
   const project = projects.find((p) => p.slug === slug);
+  const [lightbox, setLightbox] = useState<{ slug?: string; index: number } | null>(null);
+  // only show the popup for the project it was opened on
+  const lightboxIndex = lightbox && lightbox.slug === slug ? lightbox.index : null;
 
   if (!project) {
     return (
       <section className="projects">
         <div className="projects-inner">
           <h1>Project not found</h1>
-          <Link className="resume-btn" to="/projects">
+          <Link className="resume-btn" to="/projects" state={{ restoreScroll: true }}>
             Back to Projects
           </Link>
         </div>
@@ -29,13 +38,20 @@ export default function ProjectDetail() {
           <div className="case-status">
             <span className="case-statusBadge">In Progress</span>
             <p className="case-statusText">
-              This project is currently in development. Here are a few early screens — live link coming soon.
+              This project is currently in development. Here are a few early screens, and a live link is coming soon.
             </p>
           </div>
         )}
 
+        {project.notice && (
+          <div className="case-status">
+            <span className="case-statusBadge">{project.notice.label}</span>
+            <p className="case-statusText">{project.notice.text}</p>
+          </div>
+        )}
+
         <div className="case-actions">
-          <Link className="resume-btn resume-btn-secondary" to="/projects">
+          <Link className="resume-btn resume-btn-secondary" to="/projects" state={{ restoreScroll: true }}>
             Back to Projects
           </Link>
 
@@ -111,7 +127,11 @@ export default function ProjectDetail() {
                     {d.description && <p className="case-demoDesc">{d.description}</p>}
 
                     <div className="case-media">
-                        {d.video.type === 'file' ? (
+                        {!d.video ? (
+                        <div className="case-embedWrap case-videoPlaceholder">
+                            <span>Video coming soon</span>
+                        </div>
+                        ) : d.video.type === 'file' ? (
                         <video className="case-video" controls playsInline>
                             <source src={d.video.src} />
                         </video>
@@ -159,12 +179,29 @@ export default function ProjectDetail() {
                         <h2>Gallery</h2>
 
                         <div className="case-gallery">
-                        {project.gallery.map((img) => (
+                        {project.gallery.map((img, i) => (
                             <figure key={img.src} className={`case-galleryItem${img.size === 'third' ? ' case-galleryItem--third' : ''}`}>
-                            <img className="case-galleryImg" src={img.src} alt={img.alt} />
+                            <button
+                                type="button"
+                                className="case-galleryButton"
+                                onClick={() => setLightbox({ slug, index: i })}
+                                aria-label={`View larger: ${img.alt}`}
+                            >
+                                <img className="case-galleryImg" src={img.src} alt={img.alt} />
+                            </button>
+                            {img.caption && <figcaption className="case-galleryCaption">{img.caption}</figcaption>}
                             </figure>
                         ))}
                         </div>
+
+                        {lightboxIndex !== null && (
+                            <Lightbox
+                                images={project.gallery}
+                                index={lightboxIndex}
+                                onClose={() => setLightbox(null)}
+                                onChange={(index) => setLightbox({ slug, index })}
+                            />
+                        )}
                     </div>
                     )}
 
@@ -175,20 +212,20 @@ export default function ProjectDetail() {
         {project.overview && (
           <div className="case-section">
             <h2>Overview</h2>
-            <p>{project.overview}</p>
+            <Paragraphs text={project.overview} />
           </div>
         )}
 
         {project.challenge && (
           <div className="case-section">
-            <h2>Challenge</h2>
-            <p>{project.challenge}</p>
+            <h2>The Challenge</h2>
+            <Paragraphs text={project.challenge} />
           </div>
         )}
 
         {project.process && project.process.length > 0 && (
           <div className="case-section">
-            <h2>Process</h2>
+            <h2>What I Built</h2>
             <ol className="case-list">
               {project.process.map((step) => (
                 <li key={step}>{step}</li>
@@ -197,9 +234,14 @@ export default function ProjectDetail() {
           </div>
         )}
 
-        {project.results && project.results.length > 0 && (
+        {project.impact ? (
           <div className="case-section">
-            <h2>Results / Impact</h2>
+            <h2>Impact</h2>
+            <Paragraphs text={project.impact} />
+          </div>
+        ) : project.results && project.results.length > 0 && (
+          <div className="case-section">
+            <h2>Impact</h2>
             <ul className="case-list">
               {project.results.map((r) => (
                 <li key={r}>{r}</li>
@@ -210,13 +252,13 @@ export default function ProjectDetail() {
 
         {project.reflection && (
           <div className="case-section case-reflection">
-            <h2>Reflection</h2>
-            <p>{project.reflection}</p>
+            <h2>What I Learned</h2>
+            <Paragraphs text={project.reflection} />
           </div>
         )}
 
         <div className="case-actions case-actions-bottom">
-          <Link className="resume-btn resume-btn-secondary" to="/projects">
+          <Link className="resume-btn resume-btn-secondary" to="/projects" state={{ restoreScroll: true }}>
             Back to Projects
           </Link>
 

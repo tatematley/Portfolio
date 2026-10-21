@@ -9,8 +9,8 @@ export default function About() {
             <h1>Hi, I’m Tate.</h1>
 
             <p className="about-lede">
-              I’m passionate about building web experiences that feel clear, thoughtful, 
-              and genuinely useful to the people using them.
+              I design and build websites and apps with a focus on making them
+              simple, thoughtful, and enjoyable to use.
             </p>
           </div>
 
@@ -25,31 +25,30 @@ export default function About() {
 
         <div className="about-body">
           <p>
-            I care a lot about people — how they think, what they need, and what
-            gets in the way when they’re trying to get something done. That’s
-            why I’m drawn to web design and UX: it’s the perfect intersection of
-            creativity and problem-solving, with real impact on real humans.
+            I’m working on my master’s in Information Systems at BYU, and I
+            spend a lot of my time building things, from web and mobile apps to
+            internal tools and websites for small businesses. My favorite part
+            of the process comes before the code. I love talking with people,
+            understanding what they’re trying to accomplish, and figuring out
+            what might be getting in their way. Once I understand that, I can
+            start designing and building something that actually makes their
+            experience better.
           </p>
 
           <p>
-            Outside of school and projects, I love trying new experiences. I’m 
-            happiest when I’m traveling, meeting new people, and learning about 
-            different cultures. I also love being outdoors, especially skiing, along 
-            with reading and watching movies. And I’m known to bake for just about 
-            any excuse, especially when it means sharing something with the people 
-            around me.
-          </p>
-
-          <p>
-            At the core of everything I do is a desire to serve people well.
-            Whether I’m building a site, designing a flow, or collaborating with
-            a team, I want the end result to feel intentional and to make
-            someone’s day a little easier.
+            Outside of school and work, I love to travel. I’ve studied in
+            Jerusalem and Italy and traveled through Fiji, Samoa, New Zealand,
+            and Australia. Getting to experience new places and meet people from
+            different backgrounds is one of my favorite things. I also love
+            being outside, especially skiing, road biking, and playing
+            pickleball. I love to read, I’ll watch just about any movie, and
+            I’ll take almost any excuse to bake something and share it with
+            people.
           </p>
         </div>
 
         <div className="about-cta">
-          <a className="resume-btn" href="/Tate-Matley-Resume.pdf" download>
+          <a className="resume-btn" href="/TateMatleyResume.pdf" download>
             Download Resume
           </a>
           <a className="resume-btn resume-btn-secondary" href="/contact">
